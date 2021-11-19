@@ -7,6 +7,8 @@ defmodule ProjectManagementWeb.Router do
 
   scope "/api", ProjectManagementWeb do
     pipe_through :api
+    resources "/projects", ProjectController, except: [:new, :edit]
+    resources "/documents", DocumentController, except: [:new, :edit]
   end
 
   # Enables LiveDashboard only for development
